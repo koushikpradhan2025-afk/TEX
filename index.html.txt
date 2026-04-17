@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shanti Enterprise - Expert Tax Consultancy in Medinipur. ITR, GST, PAN, Aadhaar, and more.">
+    <title>Shanti Enterprise | Tax Consultancy Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables & Reset */
+        :root {
+            --primary-bg: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-light: #f4f4f4;
+            --accent: #2563eb; /* Professional subtle blue */
+            --gray-bg: #f9fafb;
+            --border-color: #e5e7eb;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--primary-bg);
+        }
+        
+        /* Typography & Utilities */
+        h1, h2, h3 { font-weight: 600; margin-bottom: 1rem; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .btn { display: inline-block; padding: 12px 24px; background: var(--text-dark); color: var(--text-light); text-decoration: none; border-radius: 4px; transition: 0.3s; border: none; cursor: pointer; }
+        .btn:hover { background: var(--accent); }
+        .btn-accent { background: var(--accent); }
+        .btn-accent:hover { background: var(--text-dark); }
+
+        /* Navigation */
+        nav { background: var(--primary-bg); padding: 20px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--text-dark); text-decoration: none; }
+        .nav-links a { color: var(--text-dark); text-decoration: none; margin-left: 20px; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Hero Section */
+        #home { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=80') center/cover; color: var(--text-light); padding: 150px 0; text-align: center; }
+        #home h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        #home p.tagline { font-size: 1.5rem; font-style: italic; margin-bottom: 30px; }
+
+        /* About Section */
+        #about { padding: 80px 0; background: var(--gray-bg); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .owner-profile { text-align: center; background: var(--primary-bg); padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .owner-profile i { font-size: 4rem; color: var(--text-dark); margin-bottom: 15px; }
+
+        /* Services Section */
+        #services { padding: 80px 0; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .service-card { padding: 30px; background: var(--primary-bg); border: 1px solid var(--border-color); border-radius: 8px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .service-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; }
+
+        /* FAQ Section */
+        #faq { padding: 80px 0; background: var(--gray-bg); }
+        .faq-item { background: var(--primary-bg); margin-bottom: 10px; border: 1px solid var(--border-color); border-radius: 4px; }
+        .faq-question { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; font-weight: 600; }
+        .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .faq-answer p { padding-bottom: 20px; }
+
+        /* Contact Section */
+        #contact { padding: 80px 0; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        .contact-info div { margin-bottom: 20px; }
+        .contact-info i { color: var(--accent); margin-right: 10px; width: 20px; }
+        .contact-form input, .contact-form textarea, .contact-form select { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid var(--border-color); border-radius: 4px; }
+
+        /* Footer */
+        footer { background: var(--text-dark); color: var(--text-light); padding: 60px 0 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-grid a { color: #a1a1aa; text-decoration: none; display: block; margin-bottom: 10px; }
+        .footer-grid a:hover { color: var(--text-light); }
+        .copyright { text-align: center; border-top: 1px solid #333; padding-top: 20px; color: #a1a1aa; }
+
+        /* Sticky WhatsApp */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 100; transition: transform 0.3s; text-decoration: none; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; /* Add hamburger menu logic for full mobile nav */ }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            #home h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">Shanti Enterprise</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home">
+        <div class="container">
+            <h1>Shanti Enterprise</h1>
+            <p class="tagline">"Your Problem, Our Responsibility"</p>
+            <p style="margin-bottom: 30px; font-size: 1.2rem;">Expert tax consultancy, registration, and financial services in Medinipur.</p>
+            <a href="#contact" class="btn btn-accent">File Your Return Now</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container about-grid">
+            <div>
+                <h2>About Us</h2>
+                <p>Since 2001, Shanti Enterprise has been a trusted partner for individuals and businesses across India. We specialize in navigating the complex landscape of taxation, compliance, and government registrations so you can focus on what matters most—growing your business.</p>
+                <br>
+                <p>Our commitment to transparency, accuracy, and timely service has made us the go-to tax consultancy in Medinipur and beyond.</p>
+            </div>
+            <div class="owner-profile">
+                <i class="fa-solid fa-user-tie"></i>
+                <h3>Timir Baran Pani</h3>
+                <p style="color: #666;">Founder & Lead Consultant</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card"><i class="fa-solid fa-file-invoice-dollar"></i><h3>ITR Filing</h3><p>Accurate and timely Income Tax Return filing for individuals and businesses.</p></div>
+                <div class="service-card"><i class="fa-solid fa-calculator"></i><h3>GST Services</h3><p>Complete GST registration and monthly/quarterly return filing.</p></div>
+                <div class="service-card"><i class="fa-solid fa-store"></i><h3>Trade License</h3><p>Hassle-free trade license assistance and renewals.</p></div>
+                <div class="service-card"><i class="fa-solid fa-file-signature"></i><h3>DSC</h3><p>Secure Digital Signature Certificate issuance.</p></div>
+                <div class="service-card"><i class="fa-solid fa-id-card"></i><h3>PAN & Aadhaar</h3><p>New applications, corrections, and linking services.</p></div>
+                <div class="service-card"><i class="fa-solid fa-building-ngo"></i><h3>Society Registration</h3><p>Registration and annual renewal for societies and NGOs.</p></div>
+                <div class="service-card"><i class="fa-solid fa-book-open"></i><h3>Audit & Accounting</h3><p>Comprehensive bookkeeping and statutory audit assistance.</p></div>
+                <div class="service-card"><i class="fa-solid fa-briefcase"></i><h3>Professional Tax</h3><p>P.Tax enrollment, registration, and payment services.</p></div>
+                <div class="service-card"><i class="fa-solid fa-users"></i><h3>EPF & ESIC</h3><p>Employer registration and monthly compliance management.</p></div>
+                <div class="service-card"><i class="fa-solid fa-shield-heart"></i><h3>Insurance</h3><p>Life, General, and Motor Vehicle insurance solutions.</p></div>
+                <div class="service-card"><i class="fa-solid fa-fingerprint"></i><h3>E-KYC</h3><p>Fast and secure E-KYC and other essential government portal services.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <div class="faq-question">Do I need to visit the office to file my ITR? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer"><p>No, we provide complete online assistance. You can send us your documents via WhatsApp or Email, and we will process your return securely.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What documents are required for GST Registration? <i class="fa-solid fa-chevron-down"></i></div>
+                    <div class="faq-answer"><p>Standard requirements include PAN card, Aadhaar card, proof of business address (electricity bill/rent agreement), and bank account details.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact & Request Service</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p style="margin-bottom: 20px;">Reach out to us for any queries or drop by our office.</p>
+                    
+                    <div><i class="fa-solid fa-location-dot"></i> <strong>Head Office:</strong> Rajnagar, Dharsa, Medinipur</div>
+                    
+                    <div>
+                        <i class="fa-solid fa-phone"></i> <strong>Phone:</strong><br>
+                        <span style="margin-left: 30px;">+91 9775154372</span><br>
+                        <span style="margin-left: 30px;">+91 9933401466</span><br>
+                        <span style="margin-left: 30px;">+91 8016911145</span><br>
+                        <span style="margin-left: 30px;">+91 6295640669</span>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form onsubmit="event.preventDefault(); alert('Thank you! Your request has been submitted. We will contact you shortly.');">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="tel" placeholder="Phone Number" required>
+                        <select required>
+                            <option value="">Select Service Required...</option>
+                            <option value="itr">Income Tax Return (ITR)</option>
+                            <option value="gst">GST Services</option>
+                            <option value="pan_aadhaar">PAN & Aadhaar Services</option>
+                            <option value="other">Other Service</option>
+                        </select>
+                        <textarea rows="4" placeholder="Briefly describe your requirement..."></textarea>
+                        <button type="submit" class="btn btn-accent" style="width: 100%;">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="color: white;">Shanti Enterprise</h3>
+                    <p style="color: #a1a1aa;">Your Problem, Our Responsibility.</p>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 15px;">Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#faq">FAQs</a>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 15px;">Connect</h4>
+                    <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Shanti Enterprise. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919775154372" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // FAQ Accordion Logic
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
